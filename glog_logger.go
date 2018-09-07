@@ -14,10 +14,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/facebookincubator/dhcplb/lib"
 	"github.com/golang/glog"
 	"github.com/insomniacslk/dhcp/dhcpv4"
 	"github.com/insomniacslk/dhcp/dhcpv6"
+
+	"./lib"
 )
 
 type glogLogger struct{}

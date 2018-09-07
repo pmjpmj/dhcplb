@@ -24,6 +24,7 @@ type DHCPMessage struct {
 	ClientID   []byte
 	Mac        []byte
 	NetBoot    bool
+	GiAddr     []byte
 	VendorData VendorData
 }
 

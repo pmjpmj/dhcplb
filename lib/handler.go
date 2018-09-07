@@ -244,6 +244,7 @@ func (s *serverImpl) handleRawPacketV4(buffer []byte, peer *net.UDPAddr) {
 	hwAddrLen := packet.HwAddrLen()
 	message.ClientID = clientHwAddr[:hwAddrLen]
 	message.Mac = clientHwAddr[:hwAddrLen]
+	message.GiAddr = packet.GatewayIPAddr()
 
 	for _, o := range packet.Options() {
 		if o.Code() == dhcpv4.OptionVendorSpecificInformation ||

@@ -246,9 +246,11 @@ func (c *configSpec) algorithm(provider ConfigProvider) (DHCPBalancingAlgorithm,
 	// Balancing algorithms coming with the dhcplb source code
 	modulo := new(modulo)
 	rr := new(roundRobin)
+	giaddr := new(giaddrModulo)
 	algorithms := map[string]DHCPBalancingAlgorithm{
 		modulo.Name(): modulo,
 		rr.Name():     rr,
+		giaddr.Name(): giaddr,
 	}
 	// load other non default algorithms from the ConfigProvider
 	providedAlgo, err := provider.NewDHCPBalancingAlgorithm(c.Version)
